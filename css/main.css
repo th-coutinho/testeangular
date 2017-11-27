@@ -3,17 +3,40 @@
 body {
   background-image: url("../imgs/background.png");
   background-position-x: right;
-  background-size: 70%;
-  background-repeat: no-repeat; }
-  @media screen and (max-width: 1540px) {
-    body {
-      background-size: 80%; } }
-  @media screen and (max-width: 1300px) {
-    body {
-      background-size: 100%; } }
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+                                 /*
+
+    @media screen and (max-width: 1540px) {
+        background-size: 80%; 
+    }
+    
+    @media screen and (max-width: 1300px) {
+        background-size: 100%; 
+    }
+
+    @media screen and (max-width: 1200px) {
+        background-size: 100% 100%; 
+    }*/ }
+
+.divDeLoading {
+  visibility: hidden;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 35px; }
   @media screen and (max-width: 1200px) {
-    body {
-      background-size: 100% 100%; } }
+    .divDeLoading {
+      height: 40px;
+      margin-left: 50px; } }
+  @media screen and (max-width: 930px) {
+    .divDeLoading {
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block; } }
+
+.mostrarLoading {
+  visibility: visible; }
 
 .divDeErro {
   display: none;
@@ -75,7 +98,7 @@ body {
   @media screen and (max-width: 930px) {
     .border {
       padding-left: 0;
-      height: 285px; } }
+      height: 320px; } }
   @media screen and (max-width: 625px) {
     .border {
       height: 375px; } }
@@ -103,7 +126,7 @@ body {
       width: 100%; } }
   @media screen and (max-width: 930px) {
     .menu-lateral {
-      height: 320px; } }
+      height: 360px; } }
   @media screen and (max-width: 625px) {
     .menu-lateral {
       height: 400px; } }
@@ -304,6 +327,12 @@ body {
       display: block;
       margin-left: auto;
       margin-right: auto; } }
+  @media screen and (max-width: 465px) {
+    .fotoDoUsuario {
+      margin-left: unset;
+      padding: 10px;
+      height: 180px;
+      width: 180px; } }
 
 .nomeDoUsuario {
   padding-left: 6px;
@@ -314,6 +343,9 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 36px;
   color: #616161; }
+  @media screen and (max-width: 465px) {
+    .nomeDoUsuario {
+      font-size: 24px; } }
 
 .idDoUsuario {
   padding-left: 6px;
@@ -324,6 +356,9 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 22px;
   color: #616161; }
+  @media screen and (max-width: 465px) {
+    .idDoUsuario {
+      font-size: 18px; } }
 
 .repositoriosDoUsuario {
   padding-left: 6px;
@@ -333,11 +368,14 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 22px;
   color: #616161; }
+  @media screen and (max-width: 465px) {
+    .repositoriosDoUsuario {
+      font-size: 18px; } }
   .repositoriosDoUsuario span {
     color: #2f6690; }
 
 .listaDeRepositorios {
-  height: 390px;
+  height: 360px;
   width: 410px;
   left: 10%;
   bottom: 10%;
@@ -386,6 +424,9 @@ body {
       left: 75%;
       right: 18%;
       top: 50px; } }
+  @media screen and (max-width: 465px) {
+    .networkDoUsuario {
+      left: 68%; } }
 
 .social {
   display: inline-block;

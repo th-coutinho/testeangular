@@ -33,7 +33,8 @@ angular.module('ExameFrontEnd').controller('ReposController', function($scope, $
     
 
     $scope.rodaAjax = () =>{
-        
+
+        $scope.mostrarLoading = true;        
         $http.get(`https://api.github.com/users/${$scope.valorDaBusca}`) //Primeiro Ajax
 
         .success(function (resultado){
@@ -43,10 +44,15 @@ angular.module('ExameFrontEnd').controller('ReposController', function($scope, $
             $http.get(resultado.repos_url) //Segundo Ajax
 
                 .success(function(resultado){
+
+                    window.scrollBy(0, document.querySelector("#quadro").offsetTop);
                     
                     $scope.mostrar = true;
                     
-                    usuario.repositorios = usuario.informacoesDeRepositorios(resultado);          
+                    usuario.repositorios = usuario.informacoesDeRepositorios(resultado);
+                    
+                                     
+                    console.log(document.querySelector("#quadro").offsetTop);
 
                     if ("activeElement" in document)
                     document.activeElement.blur();
@@ -65,9 +71,6 @@ angular.module('ExameFrontEnd').controller('ReposController', function($scope, $
 
         $scope.usuario = usuario;
         $scope.valorDaBusca = '';
+        $scope.mostrarLoading = false;  
     }
-
-
-    
-    
 });
