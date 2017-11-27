@@ -1,1 +1,1 @@
-angular.module('ExameFrontEnd', []);
+angular.module('ExameFrontEnd', ['diretivas']);

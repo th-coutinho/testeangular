@@ -1,0 +1,20 @@
+<aside class="menu-lateral">
+    <div class="marcador marcador-cima"></div>
+    <div class="marcador marcador-baixo"></div>
+    <div class="border">
+        <h1>
+        <span>Github</span>
+        Repositórios
+        </h1>
+        <p>Uma aplicação simples que faz uso da API do GitHub.</p>
+        <form>
+            <input ng-change="erro = false" ng-click="mostrar = false" ng-model="valorDaBusca" id="inputNome" type="text" placeholder="nome de usuario" value="th-coutinho"/>
+            <div id="divDeErro" class="divDeErro" ng-class="{'mostrarErro': erro}" >{{tipoDoErro}}</div>
+            <button id="btnBuscar" ng-click="rodaAjax()">Buscar</button>
+            <div>
+                <img ng-class="{'mostrarLoading': mostrarLoading}" class="divDeLoading" src="./imgs/loading.svg" alt="" srcset="">
+            </div>
+        </form>
+        
+    </div>
+</aside>

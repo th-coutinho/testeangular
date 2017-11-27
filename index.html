@@ -13,60 +13,13 @@
         <script src="js/lib/angular.min.js"></script>
         <script src="js/services/main.js"></script>
         <script src="js/controllers/resultado-controller.js"></script>
+        <script src="js/directives/diretivas.js"></script>
+        
     </head>
     <body ng-controller="ReposController">
 
-        <aside class="menu-lateral">
-            <div class="marcador marcador-cima"></div>
-            <div class="marcador marcador-baixo"></div>
-            <div class="border">
-                <h1>
-                <span>Github</span>
-                Repositórios
-                </h1>
-                <p>Uma aplicação simples que faz uso da API do GitHub.</p>
-                <form>
-                    <input ng-change="erro = false" ng-click="mostrar = false" ng-model="valorDaBusca" id="inputNome" type="text" placeholder="nome de usuario" value="th-coutinho"/>
-                    <div id="divDeErro" class="divDeErro" ng-class="{'mostrarErro': erro}" >{{tipoDoErro}}</div>
-                    <button id="btnBuscar" ng-click="rodaAjax()">Buscar</button>
-                    <div>
-                        <img ng-class="{'mostrarLoading': mostrarLoading}" class="divDeLoading" src="./imgs/loading.svg" alt="" srcset="">
-                    </div>
-                </form>
-                
-            </div>
-        </aside>
-            
-        <section class="quadro" id="quadro">
-            <div class="bordaDoQuadro" ng-class="{'mostrarConteudo': mostrar}">
-                <img class="fotoDoUsuario" src="{{usuario.foto}}" alt="foto">
-                <div class="headerQuadro">
-                    <p class="nomeDoUsuario">{{usuario.nome}}</p>
-                    <p class="idDoUsuario">{{usuario.id}}</p>                              
-                    <p class="repositoriosDoUsuario">
-                        <span>{{usuario.numeroDeRepositoriosPublicos}}</span> Repositórios Públicos</p>
-                    <div class="listaDeRepositorios">
-                        <div class="repositorio" ng-repeat="informacoes in usuario.repositorios">
-                            <a href="{{informacoes.url}}">
-                                <p>{{informacoes.nome}}</p>                        
-                            </a>
-                            <p>{{informacoes.descricao}}</p>
-                        </div>
-                    </div>      
-                </div>
-                <div class="networkDoUsuario">
-                        <div class="social"> 
-                            <p>{{usuario.following}}</p>
-                            <sub>Seguindo</sub>
-                        </div>
-                        <div class="social">
-                            <p>{{usuario.followers}}</p>
-                            <sub>Seguidores</sub>
-                        </div>
-                    </div>            
-            </div>        
-        </section>
-    
+        <menu-lateral></menu-lateral>
+        <quadro-de-informacoes></quadro-de-informacoes>     
 
     </body>
 </html>

@@ -1,0 +1,29 @@
+<section class="quadro" id="quadro">
+    <div class="bordaDoQuadro" ng-class="{'mostrarConteudo': mostrar}">
+        <img class="fotoDoUsuario" src="{{usuario.foto}}" alt="foto">
+        <div class="headerQuadro">
+            <p class="nomeDoUsuario">{{usuario.nome}}</p>
+            <p class="idDoUsuario">{{usuario.id}}</p>                              
+            <p class="repositoriosDoUsuario">
+                <span>{{usuario.numeroDeRepositoriosPublicos}}</span> Repositórios Públicos</p>
+            <div class="listaDeRepositorios">
+                <div class="repositorio" ng-repeat="informacoes in usuario.repositorios">
+                    <a href="{{informacoes.url}}">
+                        <p>{{informacoes.nome}}</p>                        
+                    </a>
+                    <p>{{informacoes.descricao}}</p>
+                </div>
+            </div>      
+        </div>
+        <div class="networkDoUsuario">
+                <div class="social"> 
+                    <p>{{usuario.following}}</p>
+                    <sub>Seguindo</sub>
+                </div>
+                <div class="social">
+                    <p>{{usuario.followers}}</p>
+                    <sub>Seguidores</sub>
+                </div>
+            </div>            
+    </div>        
+</section>
